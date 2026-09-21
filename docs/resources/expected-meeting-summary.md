@@ -1,0 +1,30 @@
+# ตัวอย่างผลลัพธ์ Meeting Action Summary
+
+ใช้ไฟล์นี้ตรวจโครงสร้างและข้อเท็จจริง ไม่ต้องคาดหวังให้ Agent ใช้ถ้อยคำเหมือนกันทุกคำ
+
+## Decisions
+
+- ใช้ shared request form เป็นช่องทางหลักสำหรับ pilot
+- ใช้สถานะ `New`, `In review`, `Waiting for information` และ `Complete`
+
+## Action items
+
+- Mali — ร่างข้อความประกาศสำหรับกลุ่มทดลอง — 9 October 2026
+- Kanda — รวบรวม request categories เวอร์ชันแรก — 8 October 2026
+- Ton — ยืนยันความพร้อมของ test workspace กับผู้ดูแล Environment — วันที่ยังไม่ระบุ
+- Owner ยังไม่ระบุ — เตรียม participant FAQ — 13 October 2026
+
+## Open questions
+
+- หลังจบ pilot ใครเป็นผู้อนุมัติการเปลี่ยน request category
+- test workspace จะพร้อมวันที่ 12 October 2026 หรือไม่
+
+## Missing information
+
+- owner ของ participant FAQ
+- due date สำหรับการยืนยัน test workspace
+
+## สิ่งที่ไม่ควรถูกจัดเป็น Decision
+
+- weekly leaderboard เป็นเพียงข้อเสนอที่ยังไม่ได้ตัดสินใจ
+- dashboard สีใหม่เป็นเพียงหัวข้อสนทนา ไม่มี action หรือ decision
