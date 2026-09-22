@@ -21,8 +21,8 @@ features:
     details: เพิ่มแฟ้ม Project Northstar เพื่อให้ Agent ใช้บริบทจากแหล่งข้อมูลที่กำหนด
     link: /exercises/02-add-project-knowledge
   - title: 3. Tools
-    details: ใช้ Office 365 Outlook สร้าง draft หลังผู้ใช้ตรวจและยืนยัน โดยไม่มีการส่ง email
-    link: /exercises/03-create-outlook-draft
+    details: สร้าง Prompt Tool ที่เปลี่ยนสรุปประชุมเป็น follow-up brief รูปแบบมาตรฐาน
+    link: /exercises/03-create-follow-up-brief-tool
   - title: 4. Human Review
     details: ทดสอบกรณีข้อมูลขาด ขัดแย้ง และคำขอที่ Agent ต้องปฏิเสธก่อนจบงาน
     link: /exercises/04-test-and-review
@@ -31,22 +31,21 @@ features:
 ## ก่อนเริ่ม
 
 - เข้า Microsoft Copilot Studio และเลือก Environment ที่ผู้สอนกำหนดได้
-- ใช้ Microsoft 365 และ Outlook ด้วยบัญชีสำหรับการอบรมได้
+- ใช้บัญชีสำหรับการอบรมที่มีสิทธิ์สร้าง Prompt Tool ได้
 - ดาวน์โหลด [ไฟล์ประกอบทั้งหมด](https://teerasej.github.io/aia-enjoy-building-agent-day/downloads/meeting-action-assistant-sample-files.zip) ไว้ก่อนเริ่ม
-- ใช้เฉพาะข้อมูลสมมติในชุดฝึก ห้ามใช้บันทึกประชุม email address หรือข้อมูลภายในจริง
+- ใช้เฉพาะข้อมูลสมมติในชุดฝึก ห้ามใช้บันทึกประชุม ข้อมูลติดต่อ หรือข้อมูลภายในจริง
 
-> **Readiness:** `Instruction` เป็น hands-on core ส่วน `Knowledge` และ `Draft an email message` ต้องผ่านการตรวจ learner account, Dataverse search, file upload, Office 365 Outlook connection, DLP policy และ training mailbox หากยังไม่พร้อม ให้ติดตาม Instructor demonstration โดยไม่พยายามหลีกเลี่ยงนโยบายของ Environment
+> **Readiness:** `Instruction` เป็น hands-on core ส่วน `Knowledge` และ Prompt Tool ต้องผ่านการตรวจ learner account, Dataverse search, file upload, supported region, Dataverse, maker permission และ Copilot Credits หากยังไม่พร้อม ให้ติดตาม Instructor demonstration โดยไม่พยายามหลีกเลี่ยงนโยบายของ Environment
 
 ## กำหนดการ Workshop
 
 | เวลา | หัวข้อ | ผลลัพธ์ |
 |---|---|---|
-| 13:00–13:15 | Wow demo | messy notes → action summary → Outlook draft |
-| 13:15–14:30 | Instruction | สร้างและทดสอบ Agent ร่วมกัน |
-| 14:30–14:45 | Break | พัก 15 นาที |
-| 14:45–15:15 | Knowledge | เพิ่มเอกสาร Project Northstar |
-| 15:15–15:40 | Tools | เพิ่ม `Draft an email message` และตรวจ `Drafts` |
-| 15:40–15:50 | Reliability and safety testing | ทดสอบข้อมูลขาด ขัดแย้ง และคำขอให้ส่ง email |
-| 15:50–16:00 | Reflect and transfer | มองหางานซ้ำที่ใช้รูปแบบเดียวกันได้ |
+| 13:30–14:20 | Instruction | สร้างและทดสอบ Agent ร่วมกัน |
+| 14:20–14:45 | Knowledge | เพิ่มเอกสาร Project Northstar |
+| 14:45–15:15 | Tools | สร้างและเรียก `Create Meeting Follow-up Brief` |
+| 15:15–15:35 | Reliability and Human Review | ทดสอบข้อมูลขาด ขัดแย้ง และคำขอที่เกินขอบเขต |
+| 15:35–15:45 | Final Wow demo | messy notes → grounded summary → standardized follow-up brief |
+| 15:45–16:00 | Q&A and workplace transfer | ถามตอบและมองหางานซ้ำที่ใช้รูปแบบเดียวกันได้ |
 
-Workshop นี้ไม่ส่ง email และไม่ Publish Agent ไปใช้งานจริง
+Workshop นี้ไม่เชื่อมต่อบริการภายนอกและไม่ Publish Agent ไปใช้งานจริง

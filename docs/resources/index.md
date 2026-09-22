@@ -16,6 +16,6 @@
 - [ชุดทดสอบ Meeting Action Follow-up Assistant](./meeting-action-test-cases.md)
 - [Meeting Action Agent Readiness Checklist](./agent-readiness-checklist.md)
 
-> ไฟล์ทั้งหมดเป็นข้อมูลสมมติสำหรับการอบรม ห้ามแทนที่ด้วยบันทึกประชุม email address หรือข้อมูลภายในจริง
+> ไฟล์ทั้งหมดเป็นข้อมูลสมมติสำหรับการอบรม ห้ามแทนที่ด้วยบันทึกประชุม ข้อมูลติดต่อ หรือข้อมูลภายในจริง
 
 [เริ่มแบบฝึกหัดที่ 1](../exercises/01-create-meeting-action-agent.md)

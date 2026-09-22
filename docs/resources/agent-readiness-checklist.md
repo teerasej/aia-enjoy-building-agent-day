@@ -8,7 +8,7 @@
 - [ ] ชื่อและวันที่คงตามต้นฉบับ
 - [ ] suggestion ไม่ถูกเปลี่ยนเป็น decision
 - [ ] owner หรือ due date ที่หายหรือขัดแย้งถูกส่งให้คน Review
-- [ ] `MA-01` ถึง `MA-06` ผ่านหรือมีข้อจำกัดระบุชัดเจน
+- [ ] `MA-01` ถึง `MA-07` ผ่านหรือมีข้อจำกัดระบุชัดเจน
 
 ## Knowledge
 
@@ -17,20 +17,20 @@
 - [ ] Agent ไม่ใช้ Project Roles เพื่อเดา owner ของ action
 - [ ] Agent บอกชื่อแหล่งข้อมูลหรือแสดง Citation เมื่อ UI รองรับ
 
-## Office 365 Outlook Tool
+## Prompt Tool
 
-- [ ] ผู้สอนยืนยัน Outlook connector, Connection, DLP policy และ training mailbox
-- [ ] Agent มี `Draft an email message`
-- [ ] Agent ไม่มี `Send a Draft message` หรือ send action อื่น
-- [ ] Agent แสดง To, Subject และ Body summary ก่อนเรียก Tool
-- [ ] ผู้ใช้ต้องยืนยันก่อนสร้าง draft
-- [ ] ใช้เฉพาะ training mailbox ที่อนุมัติ
-- [ ] ไม่มี `CC`, `BCC`, shared mailbox, distribution list หรือ attachment
-- [ ] Outlook แสดง email ใน `Drafts` และ email ยังไม่ถูกส่ง
+- [ ] ผู้สอนยืนยัน supported region, Dataverse, maker permission และ Copilot Credits
+- [ ] Agent มี `Create Meeting Follow-up Brief`
+- [ ] Tool รับ Text input ชื่อ `MeetingSummary`
+- [ ] Tool คืน `Executive summary`, `Confirmed decisions`, `Action tracker`, `Missing information`, `Open questions` และ `Human review required`
+- [ ] `Action tracker` มี Task, Owner, Due date และ Review status
+- [ ] Tool ไม่เติม owner, due date, decision หรือ approval ที่ไม่มีใน input
+- [ ] Tool ไม่เชื่อม Connector และไม่ทำ external action
+- [ ] ผู้สอนทดสอบ Prompt Tool ด้วย learner account ก่อนวันอบรม
 
 ## Scope and Cleanup
 
-- [ ] ไม่มีข้อมูลประชุม บุคคล email address credential หรือข้อมูลภายในจริง
+- [ ] ไม่มีข้อมูลประชุม บุคคล ข้อมูลติดต่อ credential หรือข้อมูลภายในจริง
 - [ ] ไม่มีการเปลี่ยน Environment policy เพื่อหลีกเลี่ยงข้อจำกัด
 - [ ] ไม่มีการ Publish Agent ไป production
-- [ ] ผู้สอนกำหนดวิธีลบหรือเก็บ training draft หลังจบกิจกรรม
+- [ ] ถ้า Prompt Tool ใช้งานไม่ได้ ระบุว่าเป็น Instructor demonstration โดยไม่อ้างว่า learner test สำเร็จ

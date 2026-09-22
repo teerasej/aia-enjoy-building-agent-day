@@ -74,6 +74,6 @@ Agent ต้องใช้ `Knowledge` เพื่ออธิบายเป�
 
 ## Summary
 
-เราได้ Agent ที่รู้บริบทของโครงการจากแหล่งข้อมูลที่กำหนด แต่ไม่ปะปน Knowledge กับหลักฐานจากการประชุม ขั้นต่อไปเราจะเพิ่ม Office 365 Outlook Tool เพื่อสร้าง draft สำหรับคน Review
+เราได้ Agent ที่รู้บริบทของโครงการจากแหล่งข้อมูลที่กำหนด แต่ไม่ปะปน Knowledge กับหลักฐานจากการประชุม ขั้นต่อไปเราจะสร้าง Prompt Tool ที่จัดสรุปให้เป็น follow-up brief รูปแบบมาตรฐาน
 
-[แบบฝึกหัดก่อนหน้า](./01-create-meeting-action-agent.md) | [กลับหน้าหลัก](../index.md) | [แบบฝึกหัดถัดไป สร้าง Outlook Draft](./03-create-outlook-draft.md)
+[แบบฝึกหัดก่อนหน้า](./01-create-meeting-action-agent.md) | [กลับหน้าหลัก](../index.md) | [แบบฝึกหัดถัดไป สร้าง Follow-up Brief](./03-create-follow-up-brief-tool.md)

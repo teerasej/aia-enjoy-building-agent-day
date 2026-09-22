@@ -38,7 +38,7 @@ export default defineConfig({
         items: [
           { text: '1. Instruction — สร้าง Agent', link: '/exercises/01-create-meeting-action-agent' },
           { text: '2. Knowledge — เพิ่มข้อมูลโครงการ', link: '/exercises/02-add-project-knowledge' },
-          { text: '3. Tools — สร้าง Outlook Draft', link: '/exercises/03-create-outlook-draft' },
+          { text: '3. Tools — สร้าง Follow-up Brief', link: '/exercises/03-create-follow-up-brief-tool' },
           { text: '4. Review — ทดสอบและตรวจงาน', link: '/exercises/04-test-and-review' }
         ]
       },

@@ -28,3 +28,16 @@
 
 - weekly leaderboard เป็นเพียงข้อเสนอที่ยังไม่ได้ตัดสินใจ
 - dashboard สีใหม่เป็นเพียงหัวข้อสนทนา ไม่มี action หรือ decision
+
+## โครงสร้าง Follow-up Brief ที่คาดหวัง
+
+เมื่อใช้ `Create Meeting Follow-up Brief` ผลลัพธ์ควรมีหัวข้อตามลำดับนี้ โดยถ้อยคำอาจต่างกันได้
+
+1. `Executive summary` ไม่เกินสาม bullet
+2. `Confirmed decisions`
+3. `Action tracker` ที่มี Task, Owner, Due date และ Review status
+4. `Missing information`
+5. `Open questions`
+6. `Human review required`
+
+ใน `Action tracker` ต้องเห็นว่า owner ของ participant FAQ และ due date สำหรับการยืนยัน test workspace ยังต้องให้คน Review ส่วน weekly leaderboard ต้องไม่ปรากฏเป็น confirmed decision
