@@ -3,7 +3,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   lang: 'th-TH',
   title: 'AIA Enjoy Building Agent Day',
-  description: 'Workshop ภาษาไทยสำหรับสร้าง Meeting Action Follow-up Assistant ด้วย Microsoft Copilot Studio',
+  description: 'Workshop ภาษาไทยสำหรับสร้าง Meeting Action Follow-up Agent และ Claims Document Readiness Agent ด้วย Microsoft Copilot Studio',
   base: '/aia-enjoy-building-agent-day/',
   cleanUrls: true,
   lastUpdated: true,
@@ -18,7 +18,7 @@ export default defineConfig({
     logo: {
       light: '/agent-mark.svg',
       dark: '/agent-mark.svg',
-      alt: 'Meeting Action Assistant'
+      alt: 'Two-Agent Workshop'
     },
     nav: [
       { text: 'เริ่ม Workshop', link: '/exercises/01-create-meeting-action-agent' },
@@ -34,12 +34,10 @@ export default defineConfig({
         ]
       },
       {
-        text: 'สร้าง Agent ตัวเดียวไปด้วยกัน',
+        text: 'สร้าง Agent สองตัวไปด้วยกัน',
         items: [
-          { text: '1. Instruction — สร้าง Agent', link: '/exercises/01-create-meeting-action-agent' },
-          { text: '2. Knowledge — เพิ่มข้อมูลโครงการ', link: '/exercises/02-add-project-knowledge' },
-          { text: '3. Tools — สร้าง Follow-up Brief', link: '/exercises/03-create-follow-up-brief-tool' },
-          { text: '4. Review — ทดสอบและตรวจงาน', link: '/exercises/04-test-and-review' }
+          { text: '1. Meeting Action Follow-up Agent', link: '/exercises/01-create-meeting-action-agent' },
+          { text: '2. Claims Document Readiness Agent', link: '/exercises/02-create-claims-document-readiness-agent' }
         ]
       },
       {
@@ -48,8 +46,9 @@ export default defineConfig({
         items: [
           { text: 'บันทึกประชุมตัวอย่าง', link: '/resources/fictional-meeting-notes' },
           { text: 'ตัวอย่างผลลัพธ์', link: '/resources/expected-meeting-summary' },
-          { text: 'ชุดทดสอบ Agent', link: '/resources/meeting-action-test-cases' },
-          { text: 'Readiness Checklist', link: '/resources/agent-readiness-checklist' }
+          { text: 'ตัวอย่าง Claims Readiness Brief', link: '/resources/expected-claims-readiness-brief' },
+          { text: 'ชุดทดสอบ Agent ทั้งสองตัว', link: '/resources/two-agent-test-cases' },
+          { text: 'Two-Agent Readiness Checklist', link: '/resources/two-agent-readiness-checklist' }
         ]
       }
     ],

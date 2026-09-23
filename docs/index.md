@@ -2,50 +2,47 @@
 layout: home
 
 hero:
-  name: Meeting Action Follow-up Assistant
-  text: สร้าง AI Agent ที่ช่วยเปลี่ยนบันทึกประชุมให้เป็นงานที่ติดตามต่อได้
-  tagline: เรียนรู้ผ่าน Agent ตัวเดียว ตั้งแต่ Instruction → Knowledge → Tools → Human Review
+  name: Two-Agent Workshop
+  text: สร้าง Agent สองตัวด้วยรูปแบบเดียวกัน
+  tagline: ลองทำ หยุดคุย เปรียบเทียบ แล้วนำความเข้าใจไปใช้กับงานใหม่
   actions:
     - theme: brand
-      text: เริ่มแบบฝึกหัดที่ 1
+      text: เริ่ม Meeting Action Agent
       link: /exercises/01-create-meeting-action-agent
     - theme: alt
       text: ดาวน์โหลดไฟล์ทั้งหมด
-      link: https://teerasej.github.io/aia-enjoy-building-agent-day/downloads/meeting-action-assistant-sample-files.zip
+      link: https://teerasej.github.io/aia-enjoy-building-agent-day/downloads/two-agent-workshop-sample-files.zip
 
 features:
-  - title: 1. Instruction
-    details: สร้าง Agent ที่แยก Decisions, Action items, Open questions และ Missing information โดยไม่เดาข้อมูล
+  - title: Meeting Action Follow-up Agent
+    details: จัดบันทึกประชุม เพิ่ม Project Knowledge และสร้าง follow-up brief ที่พร้อมให้คนตรวจ
     link: /exercises/01-create-meeting-action-agent
-  - title: 2. Knowledge
-    details: เพิ่มแฟ้ม Project Northstar เพื่อให้ Agent ใช้บริบทจากแหล่งข้อมูลที่กำหนด
-    link: /exercises/02-add-project-knowledge
-  - title: 3. Tools
-    details: สร้าง Prompt Tool ที่เปลี่ยนสรุปประชุมเป็น follow-up brief รูปแบบมาตรฐาน
-    link: /exercises/03-create-follow-up-brief-tool
-  - title: 4. Human Review
-    details: ทดสอบกรณีข้อมูลขาด ขัดแย้ง และคำขอที่ Agent ต้องปฏิเสธก่อนจบงาน
-    link: /exercises/04-test-and-review
+  - title: Claims Document Readiness Agent
+    details: ตรวจรายการเอกสารจาก fictional checklist โดยไม่ตัดสินผลของ claim
+    link: /exercises/02-create-claims-document-readiness-agent
+  - title: Pattern ที่ใช้ร่วมกัน
+    details: Instruction กำหนดงาน Knowledge ให้บริบท Prompt Tool จัดผลลัพธ์ และคนเป็นผู้ตัดสินใจ
+    link: /resources/two-agent-test-cases
 ---
 
 ## ก่อนเริ่ม
 
-- เข้า Microsoft Copilot Studio และเลือก Environment ที่ผู้สอนกำหนดได้
-- ใช้บัญชีสำหรับการอบรมที่มีสิทธิ์สร้าง Prompt Tool ได้
-- ดาวน์โหลด [ไฟล์ประกอบทั้งหมด](https://teerasej.github.io/aia-enjoy-building-agent-day/downloads/meeting-action-assistant-sample-files.zip) ไว้ก่อนเริ่ม
-- ใช้เฉพาะข้อมูลสมมติในชุดฝึก ห้ามใช้บันทึกประชุม ข้อมูลติดต่อ หรือข้อมูลภายในจริง
+- เข้า Microsoft Copilot Studio และเลือก Environment ที่ผู้สอนกำหนด
+- สร้าง Agent ผ่าน `Agents` > `New agent` > `Create blank agent` แล้วรอ provisioning ก่อนใส่ `Instructions`
+- ใช้บัญชีสำหรับการอบรมที่สร้าง Agent, เพิ่ม Knowledge และสร้าง Prompt Tool ได้
+- ดาวน์โหลด [ไฟล์ประกอบทั้งหมด](https://teerasej.github.io/aia-enjoy-building-agent-day/downloads/two-agent-workshop-sample-files.zip)
+- ใช้เฉพาะข้อมูลสมมติ ห้ามใช้ข้อมูลประชุม ข้อมูลลูกค้า ข้อมูลสุขภาพ หรือเอกสาร claim จริง
 
-> **Readiness:** `Instruction` เป็น hands-on core ส่วน `Knowledge` และ Prompt Tool ต้องผ่านการตรวจ learner account, Dataverse search, file upload, supported region, Dataverse, maker permission และ Copilot Credits หากยังไม่พร้อม ให้ติดตาม Instructor demonstration โดยไม่พยายามหลีกเลี่ยงนโยบายของ Environment
+> **Readiness:** Knowledge และ Prompt Tool ต้องผ่านการตรวจ learner account, Dataverse search, file upload, supported region, maker permission และ Copilot Credits หากยังไม่พร้อม ให้ติดตาม Instructor demonstration โดยไม่พยายามหลีกเลี่ยงนโยบาย Environment
 
-## กำหนดการ Workshop
+## Workshop Agenda
 
-| เวลา | หัวข้อ | ผลลัพธ์ |
+| เวลา | กิจกรรม | ผลลัพธ์ของผู้เรียน |
 |---|---|---|
-| 13:30–14:20 | Instruction | สร้างและทดสอบ Agent ร่วมกัน |
-| 14:20–14:45 | Knowledge | เพิ่มเอกสาร Project Northstar |
-| 14:45–15:15 | Tools | สร้างและเรียก `Create Meeting Follow-up Brief` |
-| 15:15–15:35 | Reliability and Human Review | ทดสอบข้อมูลขาด ขัดแย้ง และคำขอที่เกินขอบเขต |
-| 15:35–15:45 | Final Wow demo | messy notes → grounded summary → standardized follow-up brief |
-| 15:45–16:00 | Q&A and workplace transfer | ถามตอบและมองหางานซ้ำที่ใช้รูปแบบเดียวกันได้ |
+| 13:30–13:45 | Introduction | เห็นบทบาทของ `Instruction`, `Knowledge` และ Prompt Tool |
+| 13:45–14:45 | Meeting Action Follow-up Agent | สร้างและทดสอบ pattern แบบครบเส้นทาง |
+| 14:45–15:30 | Claims Document Readiness Agent | สร้าง pattern เดิมกับงานตรวจเอกสาร |
+| 15:30–15:45 | Final Wow Demo | เห็นจุดแข็งและขอบเขตของ Agent ทั้งสองตัว |
+| 15:45–16:00 | Conclusion | เลือกงานเล็กที่เหมาะและระบุจุดที่คนต้อง Review |
 
-Workshop นี้ไม่เชื่อมต่อบริการภายนอกและไม่ Publish Agent ไปใช้งานจริง
+Workshop ใช้จังหวะ **Show → Try → Pause → Compare → Continue** ไม่มี Connector, external action หรือ production publishing

@@ -1,21 +1,22 @@
 # ไฟล์ประกอบและ Resources
 
-ดาวน์โหลดชุดไฟล์ครั้งเดียว แล้วเปิดหน้าตัวอย่างเมื่อต้องการทดสอบหรือเปรียบเทียบผลลัพธ์
+ดาวน์โหลดชุดไฟล์ครั้งเดียว แล้วใช้หน้า Resources เพื่อตรวจผลลัพธ์ระหว่างทำแบบฝึกหัดครับ
 
 ## ดาวน์โหลด
 
-- [ไฟล์ประกอบทั้งหมด (ZIP)](https://teerasej.github.io/aia-enjoy-building-agent-day/downloads/meeting-action-assistant-sample-files.zip)
-- [Project Northstar Brief (DOCX)](https://teerasej.github.io/aia-enjoy-building-agent-day/downloads/fictional-project-brief.docx)
-- [Project Northstar Roles (DOCX)](https://teerasej.github.io/aia-enjoy-building-agent-day/downloads/fictional-project-roles.docx)
-- [Meeting Follow-up Guidelines (DOCX)](https://teerasej.github.io/aia-enjoy-building-agent-day/downloads/fictional-follow-up-guidelines.docx)
+- [ไฟล์ประกอบทั้งหมด](https://teerasej.github.io/aia-enjoy-building-agent-day/downloads/two-agent-workshop-sample-files.zip)
+- [Project Northstar Reference Pack](https://teerasej.github.io/aia-enjoy-building-agent-day/downloads/project-northstar-reference-pack.docx)
+- [Fictional Claims Readiness Guide](https://teerasej.github.io/aia-enjoy-building-agent-day/downloads/fictional-claims-readiness-guide.docx)
 
-## เปิดอ่านบนเว็บไซต์
+## ตัวอย่างและเครื่องมือช่วยตรวจ
 
 - [บันทึกประชุม Project Northstar](./fictional-meeting-notes.md)
-- [ตัวอย่างผลลัพธ์ Meeting Action Summary](./expected-meeting-summary.md)
-- [ชุดทดสอบ Meeting Action Follow-up Assistant](./meeting-action-test-cases.md)
-- [Meeting Action Agent Readiness Checklist](./agent-readiness-checklist.md)
+- [ตัวอย่าง Meeting Action Summary](./expected-meeting-summary.md)
+- [ตัวอย่าง claim submission](./fictional-claim-submission.md)
+- [ตัวอย่าง Claims Readiness Brief](./expected-claims-readiness-brief.md)
+- [ชุดทดสอบ Agent ทั้งสองตัว](./two-agent-test-cases.md)
+- [Two-Agent Workshop Readiness Checklist](./two-agent-readiness-checklist.md)
 
-> ไฟล์ทั้งหมดเป็นข้อมูลสมมติสำหรับการอบรม ห้ามแทนที่ด้วยบันทึกประชุม ข้อมูลติดต่อ หรือข้อมูลภายในจริง
+> ข้อมูลทั้งหมดเป็นข้อมูลสมมติสำหรับการอบรม ห้ามแทนที่ด้วยบันทึกประชุม ข้อมูลบุคคล ข้อมูลสุขภาพ เอกสาร claim ข้อมูลติดต่อ หรือข้อมูลภายในจริง
 
-[เริ่มแบบฝึกหัดที่ 1](../exercises/01-create-meeting-action-agent.md)
+[เริ่มแบบฝึกหัด Meeting Action](../exercises/01-create-meeting-action-agent.md) | [เริ่มแบบฝึกหัด Claims Readiness](../exercises/02-create-claims-document-readiness-agent.md)

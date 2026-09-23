@@ -2,6 +2,6 @@
 
 แบบฝึกหัดนี้เปลี่ยนจาก Outlook Connector เป็น Prompt Tool ที่ทำงานภายใน Copilot Studio เพื่อให้ผู้เรียนทำตามได้โดยไม่ต้องเชื่อมต่อบริการภายนอก
 
-[เปิดแบบฝึกหัดที่ 3 สร้าง Follow-up Brief ด้วย Prompt Tool](./03-create-follow-up-brief-tool.md)
+[เปิดแบบฝึกหัด Meeting Action Follow-up Agent](./01-create-meeting-action-agent.md#practice-3-สร้าง-meeting-prompt-tool)
 
 [กลับหน้าหลัก](../index.md)
