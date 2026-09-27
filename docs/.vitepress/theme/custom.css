@@ -13,8 +13,38 @@
   --vp-c-brand-soft: rgba(255, 93, 133, 0.16);
 }
 
+.VPHomeHero .container {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  max-width: 1152px;
+  padding: 64px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 24px;
+  background-image: url('../../assets/workshop/workshop-overview.webp');
+  background-position: center;
+  background-size: cover;
+  box-shadow: 0 18px 46px rgba(37, 43, 58, 0.14);
+}
+
+.VPHomeHero .container::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.94) 42%, rgba(255, 255, 255, 0.12) 68%, rgba(255, 255, 255, 0) 100%);
+  content: '';
+}
+
+.dark .VPHomeHero .container::before {
+  background: linear-gradient(90deg, rgba(27, 27, 31, 0.98) 0%, rgba(27, 27, 31, 0.94) 42%, rgba(27, 27, 31, 0.3) 68%, rgba(27, 27, 31, 0.08) 100%);
+}
+
+.VPHomeHero .main {
+  max-width: 54%;
+}
+
 .VPHomeHero .name {
-  max-width: 800px;
+  max-width: 560px;
 }
 
 .vp-doc blockquote {
@@ -52,6 +82,23 @@
 @media (min-width: 960px) {
   .VPFooter.has-sidebar {
     padding-left: calc(var(--vp-sidebar-width) + 32px);
+  }
+}
+
+@media (max-width: 767px) {
+  .VPHomeHero .container {
+    padding: 36px 28px 260px;
+    border-radius: 18px;
+    background-position: 66% bottom;
+  }
+
+  .VPHomeHero .container::before,
+  .dark .VPHomeHero .container::before {
+    background: linear-gradient(180deg, var(--vp-c-bg) 0%, var(--vp-c-bg) 46%, transparent 72%);
+  }
+
+  .VPHomeHero .main {
+    max-width: none;
   }
 }
 

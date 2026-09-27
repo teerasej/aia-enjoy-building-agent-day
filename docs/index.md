@@ -25,12 +25,6 @@ features:
     link: /resources/two-agent-test-cases
 ---
 
-<div class="workshop-artwork">
-
-![ผู้เรียนร่วมกันสร้าง Agent โดยใช้ Instruction, Knowledge และ Prompt Tool](./assets/workshop/workshop-overview.webp)
-
-</div>
-
 ## ก่อนเริ่ม
 
 - เข้า Microsoft Copilot Studio และเลือก Environment ที่ผู้สอนกำหนด
