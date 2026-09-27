@@ -2,6 +2,12 @@
 
 เราจะสร้าง Agent ที่เปลี่ยนบันทึกประชุมซึ่งมีข้อสรุป งาน และความเห็นปะปนกันให้เป็นข้อมูลที่ตรวจต่อได้ง่าย จากนั้นเพิ่ม `Knowledge` และสร้าง Prompt Tool เพื่อจัดผลลัพธ์ให้อยู่ในรูปแบบเดียวกันครับ
 
+<div class="workshop-artwork">
+
+![ทีมจัดระเบียบบันทึกประชุมเพื่อเตรียม Meeting Action Follow-up Agent](../assets/workshop/meeting-action-follow-up.webp)
+
+</div>
+
 > **License:** ต้องตรวจสอบก่อนเริ่มอบรมว่า learner account สร้างและทดสอบ Agent, เพิ่มไฟล์เป็น `Knowledge` และสร้าง Prompt Tool ได้ รวมถึง Environment มี Dataverse, Dataverse search, supported region และ Copilot Credits เพียงพอ
 
 ## Prerequisites

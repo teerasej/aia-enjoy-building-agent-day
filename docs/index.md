@@ -25,6 +25,12 @@ features:
     link: /resources/two-agent-test-cases
 ---
 
+<div class="workshop-artwork">
+
+![ผู้เรียนร่วมกันสร้าง Agent โดยใช้ Instruction, Knowledge และ Prompt Tool](./assets/workshop/workshop-overview.webp)
+
+</div>
+
 ## ก่อนเริ่ม
 
 - เข้า Microsoft Copilot Studio และเลือก Environment ที่ผู้สอนกำหนด
@@ -44,5 +50,11 @@ features:
 | 14:45–15:30 | Claims Document Readiness Agent | สร้าง pattern เดิมกับงานตรวจเอกสาร |
 | 15:30–15:45 | Final Wow Demo | เห็นจุดแข็งและขอบเขตของ Agent ทั้งสองตัว |
 | 15:45–16:00 | Conclusion | เลือกงานเล็กที่เหมาะและระบุจุดที่คนต้อง Review |
+
+<div class="workshop-artwork">
+
+![ทีมผู้เรียนตรวจผลลัพธ์ของ Agent ก่อนนำไปใช้](./assets/workshop/human-review-readiness.webp)
+
+</div>
 
 Workshop ใช้จังหวะ **Show → Try → Pause → Compare → Continue** ไม่มี Connector, external action หรือ production publishing

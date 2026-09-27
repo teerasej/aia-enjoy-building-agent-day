@@ -2,6 +2,12 @@
 
 เราจะใช้รูปแบบจาก Agent ตัวแรกกับงานใหม่ Agent จะตรวจว่าเอกสารสำหรับกรณีฝึกมีอะไรแล้วและส่วนใดยังขาด แต่จะไม่ตัดสิน coverage, eligibility, approval, rejection, payment หรือข้อสรุปทางการแพทย์ครับ
 
+<div class="workshop-artwork">
+
+![ผู้เรียนและ Agent ตรวจความพร้อมของเอกสารสำหรับกรณีฝึก](../assets/workshop/claims-document-readiness.webp)
+
+</div>
+
 > **License:** ต้องตรวจสอบก่อนเริ่มอบรมว่า learner account สร้างและทดสอบ Agent, เพิ่มไฟล์เป็น `Knowledge` และสร้าง Prompt Tool ได้ รวมถึง Environment มี Dataverse, Dataverse search, supported region และ Copilot Credits เพียงพอ
 
 ## Prerequisites

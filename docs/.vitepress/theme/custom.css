@@ -20,3 +20,45 @@
 .vp-doc blockquote {
   border-left-color: var(--vp-c-brand-1);
 }
+
+.workshop-artwork {
+  margin: 24px 0 32px;
+  overflow: hidden;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 18px;
+  background: var(--vp-c-bg-soft);
+  box-shadow: 0 14px 34px rgba(37, 43, 58, 0.12);
+}
+
+.workshop-artwork p {
+  margin: 0;
+}
+
+.workshop-artwork img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+}
+
+.VPFooter .copyright a {
+  white-space: nowrap;
+}
+
+.VPFooter.has-sidebar {
+  display: block !important;
+}
+
+@media (min-width: 960px) {
+  .VPFooter.has-sidebar {
+    padding-left: calc(var(--vp-sidebar-width) + 32px);
+  }
+}
+
+@media (max-width: 640px) {
+  .workshop-artwork {
+    margin: 20px 0 28px;
+    border-radius: 12px;
+    box-shadow: 0 10px 24px rgba(37, 43, 58, 0.1);
+  }
+}

@@ -22,8 +22,7 @@ export default defineConfig({
     },
     nav: [
       { text: 'เริ่ม Workshop', link: '/exercises/01-create-meeting-action-agent' },
-      { text: 'ไฟล์ประกอบ', link: '/resources/' },
-      { text: 'GitHub', link: 'https://github.com/teerasej/aia-enjoy-building-agent-day' }
+      { text: 'ไฟล์ประกอบ', link: '/resources/' }
     ],
     sidebar: [
       {
@@ -59,10 +58,6 @@ export default defineConfig({
       level: [2, 3],
       label: 'ในหน้านี้'
     },
-    editLink: {
-      pattern: 'https://github.com/teerasej/aia-enjoy-building-agent-day/edit/main/docs/:path',
-      text: 'แก้ไขหน้านี้บน GitHub'
-    },
     lastUpdated: {
       text: 'อัปเดตล่าสุด',
       formatOptions: {
@@ -74,12 +69,9 @@ export default defineConfig({
       prev: 'ก่อนหน้า',
       next: 'ถัดไป'
     },
-    socialLinks: [
-      { icon: 'github', link: 'https://github.com/teerasej/aia-enjoy-building-agent-day' }
-    ],
     footer: {
       message: 'ใช้ข้อมูลสมมติสำหรับการอบรมเท่านั้น',
-      copyright: 'AIA Enjoy Building Agent Day'
+      copyright: 'All rights reserved. Teerasej Jiraphachandej · <a href="https://www.facebook.com/teerasej" target="_blank" rel="noopener noreferrer" aria-label="Facebook ของ Teerasej Jiraphachandej">Facebook</a> · <a href="https://www.youtube.com/teerasej" target="_blank" rel="noopener noreferrer" aria-label="YouTube ของ Teerasej Jiraphachandej">YouTube</a>'
     }
   }
 })
