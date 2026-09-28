@@ -19,6 +19,7 @@
 - `fictional-claim-form.docx` ใช้เป็นไฟล์แนบสำหรับการฝึก
 - `fictional-itemized-receipt.pdf` ใช้เป็นไฟล์แนบสำหรับการฝึก
 - `fictional-medical-certificate.pdf` ใช้เป็นไฟล์แนบสำหรับการฝึก
+- `fictional-medical-certificate-signed.pdf` ใช้แทน medical certificate ฉบับเดิมสำหรับการทดสอบทางเลือก
 - `fictional-claim-submission.md` ใช้ตรวจรายละเอียดของ Claim Package และขอบเขตการใช้
 
 หากไม่สะดวกใช้ ZIP สามารถดาวน์โหลดไฟล์แยกได้จากรายการด้านล่าง
@@ -28,6 +29,7 @@
 - [Fictional Claim Form](https://teerasej.github.io/aia-enjoy-building-agent-day/downloads/fictional-claim-form.docx)
 - [Fictional Itemized Receipt](https://teerasej.github.io/aia-enjoy-building-agent-day/downloads/fictional-itemized-receipt.pdf)
 - [Fictional Medical Certificate](https://teerasej.github.io/aia-enjoy-building-agent-day/downloads/fictional-medical-certificate.pdf)
+- [Fictional Medical Certificate (Signed)](https://teerasej.github.io/aia-enjoy-building-agent-day/downloads/fictional-medical-certificate-signed.pdf)
 
 ## ตัวอย่างและเครื่องมือช่วยตรวจ
 

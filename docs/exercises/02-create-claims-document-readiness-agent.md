@@ -18,6 +18,7 @@
    - [Fictional Claim Form](https://teerasej.github.io/aia-enjoy-building-agent-day/downloads/fictional-claim-form.docx)
    - [Fictional Itemized Receipt](https://teerasej.github.io/aia-enjoy-building-agent-day/downloads/fictional-itemized-receipt.pdf)
    - [Fictional Medical Certificate](https://teerasej.github.io/aia-enjoy-building-agent-day/downloads/fictional-medical-certificate.pdf)
+- ดาวน์โหลด [Fictional Medical Certificate (Signed)](https://teerasej.github.io/aia-enjoy-building-agent-day/downloads/fictional-medical-certificate-signed.pdf) สำหรับการทดสอบทางเลือก
 - เปิด [รายละเอียดชุดเอกสารสำหรับการฝึก](../resources/fictional-claim-submission.md)
 - ใช้เฉพาะข้อมูลสมมติ ห้ามใช้ข้อมูลลูกค้า ข้อมูลสุขภาพ หรือเอกสาร claim จริง
 
@@ -42,7 +43,11 @@
 4. รอจนระบบ provisioning Agent เสร็จและเปิดหน้า Agent ให้เรียบร้อย อย่าเปลี่ยนหน้าเว็บในระหว่างนี้
 5. ไปที่ส่วน `Instructions` วางข้อความต่อไปนี้ แล้วเลือก `Save`
 
+   > ถ้าไม่ต้องการให้ agent ตอบกลับเป็นภาษาไทยอย่างเดียวให้ลบบรรทัด `Response in thai only.` ออก
+
    ```text
+   Response in thai only.
+
    Task
    - Review attached files for fictional training cases and return:
       1. Files received
@@ -69,10 +74,9 @@
 
    ```text
    ช่วยสรุปชื่อไฟล์ที่ได้รับและข้อมูลสำคัญที่อ่านได้จากแต่ละไฟล์
-   โดยยังไม่ตัดสินผลของ claim
    ```
 
-   สังเกตว่า Agent อ่านและจัดข้อมูลจากหลายไฟล์ได้ แต่ยังไม่ทราบว่า claim process ต้องใช้เอกสารและข้อมูลใดบ้าง เพราะเรายังไม่ได้เพิ่ม checklist เป็น Knowledge
+   สังเกตว่า Agent อ่านและจัดข้อมูลจากหลายไฟล์ได้ แถมบอกข้อมูลที่อาจจะขาดหายไปในเอกสาร อย่างลายเซ็น แต่ยังไม่ทราบว่า claim process ต้องใช้เอกสารและข้อมูลใดบ้าง เพราะเรายังไม่ได้เพิ่ม checklist เป็น Knowledge
 
 #### Pause and compare
 
@@ -89,77 +93,86 @@
 
 **Primary target:** เพิ่ม fictional checklist หนึ่งไฟล์เพื่อให้ Agent ตรวจเอกสารจากแหล่งอ้างอิงที่กำหนด
 
-1. เปิด Agent แล้วไปที่ `Knowledge`
-2. เลือก `Add knowledge` และอัปโหลด `fictional-claims-readiness-guide.docx`
-3. ตั้งชื่อแหล่งข้อมูลดังนี้ แล้วเลือก `Add to agent` และ `Save`
+1. เปิด `fictional-claims-readiness-guide.docx` และตรวจหัวข้อ `Fictional training checklist` ว่าชุดเอกสารและข้อมูลที่ครบสำหรับ claim process ในกรณีฝึกมีรายการต่อไปนี้
+
+   1. Fictional claim form ที่ระบุว่า completed
+   2. Itemized receipt ที่มีรายการบริการและยอดเงิน
+   3. Medical certificate ที่มี service date และ provider signature
+   4. Payment instruction confirmation
+
+2. เปิด Agent แล้วไปที่ `Knowledge`
+3. เลือก `Add knowledge` และอัปโหลด `fictional-claims-readiness-guide.docx`
+4. เลือก `Add to agent` และ `Save`
+5. เมื่อไฟล์อยู่ในสถานะ ready ให้กดเข้าไปใน knowledge source ของไฟล์นั้น ตั้งชื่อแหล่งข้อมูลดังนี้ แล้ว
 
    ```text
    Fictional Claims Readiness Guide
    ```
 
-4. เริ่มบทสนทนาใหม่แล้วถาม
+6. กลับไปที่ `Instructions` แล้วแทนที่ข้อความเดิมด้วย Instructions ฉบับสมบูรณ์ด้านล่าง จากนั้นเลือก `Save`
 
    ```text
-   ตาม Fictional Claims Readiness Guide กรณีฝึกต้องมีเอกสารอะไรบ้าง
-   บอกชื่อแหล่งข้อมูลที่ใช้เมื่อทำได้
+   Response in thai only.
+
+   Task
+   - Review attached files for fictional training cases and return:
+      1. Files received
+      2. Required documents missing
+      3. Missing or unclear information within received documents
+      4. Questions for follow-up
+
+   Readiness rules
+   - Preserve supplied filenames, references, dates, and amounts exactly.
+   - Never invent a file, document, signature, date, amount, fact, or status.
+   - Never decide coverage, eligibility, approval, rejection, payment, or
+      medical conclusions.
+   - Never request or expose real customer, health, identity, or claim data.
+
+   Knowledge use
+   - When checking document readiness, search configured Knowledge and compare its
+      checklist with all files attached in the current conversation.
+   - Keep required documents that are absent separate from missing or unclear
+      information inside received documents.
+   - Mention the Knowledge source name when it is available.
+   - If configured Knowledge does not contain a checklist item or answer, say that
+      the information was not found instead of guessing.
+   - Treat configured Knowledge as a fictional training guide, not as an AIA policy
+      or a basis for deciding a claim.
+
+   Email draft
+   - When the user requests an email draft, use Create Claims Revision Email with
+      the reviewed package findings.
+   - Never claim that an email was created or sent.
+   - Always require review by an authorized person before the draft is used.
    ```
 
-5. เริ่มบทสนทนาใหม่ แล้วแนบไฟล์ทั้งสามรายการต่อไปนี้
+   Instructions นี้เพิ่มคำสั่งให้ Agent ค้น Knowledge เป็น checklist และบอกเมื่อไม่พบข้อมูล โดยยังคงขอบเขตว่า Agent ตรวจเฉพาะความพร้อมของเอกสารและไม่ตัดสิน claim
+
+7. เริ่มบทสนทนาใหม่แล้วถาม
+
+   ```text
+   ตาม Claims Guide ต้องมีเอกสารอะไรบ้าง
+   ```
+
+8. เริ่มบทสนทนาใหม่ แล้วแนบไฟล์ทั้งสามรายการต่อไปนี้
 
    - `fictional-claim-form.docx`
    - `fictional-itemized-receipt.pdf`
    - `fictional-medical-certificate.pdf`
 
-6. ส่งคำขอต่อไปนี้
+9. ส่งคำขอต่อไปนี้
 
    ```text
-   ตรวจ claim package นี้ตาม Fictional Claims Readiness Guide แล้วแยกผลเป็น
-   Files received, Required documents missing, Missing or unclear information
-   within received documents และ Questions for follow-up
+   ตรวจ claim package นี้ว่าพร้อมเคลมหรือไม่
    ```
 
-7. ตรวจว่า Agent แยกผลลัพธ์ได้ถูกต้อง
+10. ตรวจว่า Agent แยกผลลัพธ์ได้ถูกต้อง
 
    - `payment instruction confirmation` เป็น **Required document missing** เพราะไม่มีไฟล์นี้ใน package
    - `provider signature` เป็น **Missing information within a received document** เพราะมี medical certificate แต่ช่องลายเซ็นยังว่าง
    - Agent ไม่ตัดสิน coverage, eligibility หรือผลของ claim
 
-> **Optional improvement:** หาก Agent ไม่ใช้ Knowledge เมื่อตอบคำถามในข้อ 4 หรือ 6 ให้กลับไปที่ `Instructions` แล้วแทนที่ข้อความเดิมด้วย Instructions ฉบับสมบูรณ์ด้านล่าง จากนั้นเลือก `Save` และเริ่มบทสนทนาใหม่เพื่อทดสอบอีกครั้ง
-
-```text
-Task
-- Review attached files for fictional training cases and return:
-   1. Files received
-   2. Required documents missing
-   3. Missing or unclear information within received documents
-   4. Questions for follow-up
-
-Readiness rules
-- Preserve supplied filenames, references, dates, and amounts exactly.
-- Never invent a file, document, signature, date, amount, fact, or status.
-- Never decide coverage, eligibility, approval, rejection, payment, or
-   medical conclusions.
-- Never request or expose real customer, health, identity, or claim data.
-
-Knowledge use
-- When checking document readiness, search configured Knowledge and compare its
-   checklist with all files attached in the current conversation.
-- Keep required documents that are absent separate from missing or unclear
-   information inside received documents.
-- Mention the Knowledge source name when it is available.
-- If configured Knowledge does not contain a checklist item or answer, say that
-   the information was not found instead of guessing.
-- Treat configured Knowledge as a fictional training guide, not as an AIA policy
-   or a basis for deciding a claim.
-
-Email draft
-- When the user requests an email draft, use Create Claims Revision Email with
-   the reviewed package findings.
-- Never claim that an email was created or sent.
-- Always require review by an authorized person before the draft is used.
-```
-
-การปรับปรุงนี้เพิ่มกติกาให้ Agent ค้น Knowledge เป็น checklist และบอกเมื่อไม่พบข้อมูล โดยยังคงขอบเขตว่า Agent ตรวจเฉพาะความพร้อมของเอกสารและไม่ตัดสิน claim
+> **Optional comparison:** เริ่มบทสนทนาใหม่ แล้วแนบ `fictional-claim-form.docx`, `fictional-itemized-receipt.pdf` และ `fictional-medical-certificate-signed.pdf` แทนชุดเดิม จากนั้นส่ง Prompt ในข้อ 9 อีกครั้ง ตรวจว่า Agent มองเห็น handwritten provider signature จากรูปภาพและไม่ระบุ provider signature เป็นข้อมูลที่ขาด แต่ยังระบุ `payment instruction confirmation` เป็นเอกสารที่ยังขาด
 
 #### Pause and compare
 
@@ -204,7 +217,7 @@ Knowledge ทำหน้าที่เป็น checklist สำหรับ�
    and amounts exactly as supplied in ClaimPackageReview.
 
    Return exactly this structure:
-   หัวข้ออีเมล: [short Thai subject with the training reference when available]
+   หัวข้ออีเมล: [polite and concise claim revision subject]
 
    เนื้อหาอีเมล:
    เรียน ผู้ส่งคำขอ
@@ -223,7 +236,7 @@ Knowledge ทำหน้าที่เป็น checklist สำหรับ�
    [one short paragraph asking the initiator to revise and resubmit all items]
 
    ขอแสดงความนับถือ
-   ทีมตรวจความพร้อมเอกสาร (กรณีฝึก)
+   ทีมตรวจความพร้อมเอกสาร
 
    Use only information supplied in ClaimPackageReview. Do not invent a
    recipient name, email address, filename, document, signature, date, amount,
@@ -251,6 +264,8 @@ Knowledge ทำหน้าที่เป็น checklist สำหรับ�
 8. ที่ส่วน `Instructions` เลือก `Edit` แล้วแทนที่ข้อความเดิมด้วย Instructions ฉบับสมบูรณ์ด้านล่าง
 
    ```text
+   Response in thai only.
+
    Task
    - Review attached files for fictional training cases and return:
       1. Files received
@@ -295,7 +310,7 @@ Knowledge ทำหน้าที่เป็น checklist สำหรับ�
 11. ถาม
 
     ```text
-    ตรวจ claim package นี้ตาม Knowledge แล้วแยกเอกสารที่ได้รับ เอกสารที่ยังขาด
+    ตรวจ claim package นี้ แล้วแยกเอกสารที่ได้รับ เอกสารที่ยังขาด
     และข้อมูลที่ขาดหรือไม่ชัดภายในเอกสารที่ได้รับ
     ```
 
@@ -304,7 +319,7 @@ Knowledge ทำหน้าที่เป็น checklist สำหรับ�
 14. ถามต่อในบทสนทนาเดิม
 
     ```text
-    ช่วยร่างอีเมลภาษาไทยถึงผู้ส่งคำขอ เพื่อแจ้งรายการที่ต้องแก้ไข
+    ช่วยร่างอีเมลถึงคนขอเคลม เพื่อแจ้งรายการที่ต้องแก้ไข
     และขอให้ส่ง claim package กลับมาใหม่
     ```
 

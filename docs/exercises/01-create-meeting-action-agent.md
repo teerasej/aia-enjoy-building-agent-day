@@ -35,7 +35,29 @@
    ```
 
 4. รอจนระบบ provisioning Agent เสร็จและเปิดหน้า Agent ให้เรียบร้อย อย่าเปลี่ยนหน้าเว็บในระหว่างนี้
-5. ไปที่ส่วน `Instructions` วางข้อความต่อไปนี้ แล้วเลือก `Save`
+5. เปิด `Test your agent` ทางด้านขวาของหน้า Copilot Studio
+6. ส่ง Prompt ใด Prompt หนึ่งต่อไปนี้
+
+   ```text
+   ทำอะไรได้บ้าง
+   ```
+
+   หรือ
+
+   ```text
+   What can you do for me?
+   ```
+
+7. ตรวจคำตอบว่า Agent อธิบายสิ่งที่ช่วยทำได้
+8. หากต้องการให้ Agent ตอบเป็นภาษาไทย ให้กลับไปที่ `Overview` เลือก `Edit` ในส่วน `Instructions` เพิ่มข้อความต่อไปนี้ไว้บรรทัดบนสุด แล้วเลือก `Save`
+
+   ```text
+   response in thai only
+   ```
+
+   จากนั้นกลับไปที่ `Test your agent` และส่ง Prompt ในข้อ 6 อีกครั้งเพื่อตรวจว่า Agent ตอบเป็นภาษาไทย
+
+9. ไปที่ส่วน `Instructions` วางข้อความต่อไปนี้ต่อจากข้อความในข้อ 8 ถ้ามี แล้วเลือก `Save`
 
    ```text
     Task
@@ -58,8 +80,8 @@
     - Always require human review.
    ```
 
-6. เปิด `Test your agent`
-7. วาง [บันทึกประชุม Project Northstar](../resources/fictional-meeting-notes.md) แล้วส่งคำขอนี้
+10. เปิด `Test your agent`
+11. วาง [บันทึกประชุม Project Northstar](../resources/fictional-meeting-notes.md) แล้วส่งคำขอนี้
 
    ```text
    จัดบันทึกประชุมนี้เป็น Decisions, Action items, Open questions และ
@@ -107,37 +129,43 @@
 
 > **Optional improvement:** หาก Agent ไม่ใช้ Knowledge เมื่อตอบคำถามในข้อ 4 ให้กลับไปที่ `Instructions` แล้วแทนที่ข้อความเดิมด้วย Instructions ฉบับสมบูรณ์ด้านล่าง จากนั้นเลือก `Save` และเริ่มบทสนทนาใหม่เพื่อทดสอบข้อ 4 และ 5 อีกครั้ง
 
-```text
-Task
-- Organize training meeting notes into the required sections:
-   1. Decisions
-   2. Action items
-   3. Open questions
-   4. Missing information
+> ถ้าไม่ต้องการให้ agent ตอบกลับเป็นภาษาไทยอย่างเดียวให้ลบบรรทัด `Response in thai only.` ออก
 
-Rules
-- Preserve names and dates exactly as provided.
-- Treat an item as a decision only when the notes explicitly confirm it.
-- Never invent an owner, due date, approval, or completion status.
-- Use configured Knowledge only for project context, not as evidence for
-   meeting-specific details.
+   ```text
+   Response in thai only.
 
-Knowledge use
-- When the user asks about project context, search configured Knowledge before
-   answering and base the answer on the retrieved content.
-- Mention the Knowledge source name when it is available.
-- If configured Knowledge does not contain the answer, say that the information
-   was not found instead of guessing.
-- Never use general project roles from Knowledge to fill missing owners, due
-   dates, decisions, or other meeting-specific details.
+   Task
+   - Organize training meeting notes into the required sections:
+      1. Decisions
+      2. Action items
+      3. Open questions
+      4. Missing information
 
-Standardized brief
-- When the user requests a standardized brief, use Create Meeting Follow-up
-   Brief with the reviewed meeting summary.
-- Always require human review.
-```
+   Rules
+   - Preserve names and dates exactly as provided.
+   - Treat an item as a decision only when the notes explicitly confirm it.
+   - Never invent an owner, due date, approval, or completion status.
+   - Use configured Knowledge only for project context, not as evidence for
+      meeting-specific details.
 
-การปรับปรุงนี้เพิ่มกติกาให้ Agent ค้นและอ้างอิง Knowledge เมื่อตอบบริบทโครงการ พร้อมบอกเมื่อไม่พบข้อมูล โดยยังคงกติกาเดิมที่ห้ามใช้ Knowledge เดา owner หรือรายละเอียดเฉพาะการประชุม
+   Knowledge use
+   - When the user asks about project context, search configured Knowledge before
+      answering and base the answer on the retrieved content.
+   - Mention the Knowledge source name when it is available.
+   - If configured Knowledge does not contain the answer, say that the information
+      was not found instead of guessing.
+   - Never use general project roles from Knowledge to fill missing owners, due
+      dates, decisions, or other meeting-specific details.
+
+   Standardized brief
+   - When the user requests a standardized brief, use Create Meeting Follow-up
+      Brief with the reviewed meeting summary.
+   - Always require human review.
+   ```
+
+การปรับปรุงนี้เพิ่มกติกาให้ Agent ค้นและอ้างอิง Knowledge เมื่อตอบบริบทโครงการ พร้อมบอกเมื่อไม่พบข้อมูล
+
+
 
 #### Pause and compare
 

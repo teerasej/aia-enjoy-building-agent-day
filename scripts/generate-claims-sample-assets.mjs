@@ -18,6 +18,7 @@ import {
   WidthType,
 } from "docx";
 import PDFDocument from "pdfkit";
+import { PNG } from "pngjs";
 
 const scriptDirectory = dirname(fileURLToPath(import.meta.url));
 const repositoryRoot = resolve(scriptDirectory, "..");
@@ -28,6 +29,10 @@ const receiptPath = resolve(downloadsDirectory, "fictional-itemized-receipt.pdf"
 const certificatePath = resolve(
   downloadsDirectory,
   "fictional-medical-certificate.pdf",
+);
+const signedCertificatePath = resolve(
+  downloadsDirectory,
+  "fictional-medical-certificate-signed.pdf",
 );
 const meetingNotesPath = resolve(
   resourcesDirectory,
@@ -274,8 +279,98 @@ async function createReceipt() {
   });
 }
 
-async function createMedicalCertificate() {
-  await createPdf(certificatePath, "Fictional Medical Certificate", (document) => {
+function createSignatureImage() {
+  const image = new PNG({ width: 520, height: 150, colorType: 6 });
+
+  function drawDot(x, y, radius = 3) {
+    for (let offsetY = -radius; offsetY <= radius; offsetY += 1) {
+      for (let offsetX = -radius; offsetX <= radius; offsetX += 1) {
+        if (offsetX * offsetX + offsetY * offsetY > radius * radius) continue;
+        const pixelX = Math.round(x + offsetX);
+        const pixelY = Math.round(y + offsetY);
+        if (
+          pixelX < 0 ||
+          pixelX >= image.width ||
+          pixelY < 0 ||
+          pixelY >= image.height
+        ) {
+          continue;
+        }
+        const index = (image.width * pixelY + pixelX) << 2;
+        image.data[index] = 28;
+        image.data[index + 1] = 62;
+        image.data[index + 2] = 94;
+        image.data[index + 3] = 235;
+      }
+    }
+  }
+
+  function drawBezier(start, controlOne, controlTwo, end, radius = 3) {
+    for (let step = 0; step <= 180; step += 1) {
+      const time = step / 180;
+      const inverse = 1 - time;
+      const x =
+        inverse ** 3 * start.x +
+        3 * inverse ** 2 * time * controlOne.x +
+        3 * inverse * time ** 2 * controlTwo.x +
+        time ** 3 * end.x;
+      const y =
+        inverse ** 3 * start.y +
+        3 * inverse ** 2 * time * controlOne.y +
+        3 * inverse * time ** 2 * controlTwo.y +
+        time ** 3 * end.y;
+      drawDot(x, y, radius);
+    }
+  }
+
+  drawBezier(
+    { x: 22, y: 102 },
+    { x: 42, y: 8 },
+    { x: 145, y: 16 },
+    { x: 108, y: 92 },
+    4,
+  );
+  drawBezier(
+    { x: 108, y: 92 },
+    { x: 82, y: 134 },
+    { x: 190, y: 119 },
+    { x: 202, y: 66 },
+  );
+  drawBezier(
+    { x: 176, y: 94 },
+    { x: 230, y: 34 },
+    { x: 237, y: 129 },
+    { x: 278, y: 76 },
+  );
+  drawBezier(
+    { x: 270, y: 78 },
+    { x: 323, y: 26 },
+    { x: 343, y: 122 },
+    { x: 390, y: 73 },
+  );
+  drawBezier(
+    { x: 382, y: 76 },
+    { x: 422, y: 38 },
+    { x: 437, y: 105 },
+    { x: 474, y: 72 },
+  );
+  drawBezier(
+    { x: 52, y: 126 },
+    { x: 180, y: 116 },
+    { x: 348, y: 136 },
+    { x: 492, y: 112 },
+    2,
+  );
+
+  return PNG.sync.write(image);
+}
+
+async function createMedicalCertificate(path, signed = false) {
+  const title = signed
+    ? "Fictional Medical Certificate - Signed"
+    : "Fictional Medical Certificate";
+
+  await createPdf(path, title, (document) => {
     labelValue(document, "Certificate number:", "SYN-MED-2048");
     labelValue(document, "Training reference:", "TRAIN-CLM-2048");
     labelValue(document, "Provider:", "Example Health Training Center");
@@ -295,18 +390,24 @@ async function createMedicalCertificate() {
       .fontSize(11)
       .fillColor("#173F5F")
       .text("Provider signature:");
-    document.moveDown(1.8);
-    document
-      .moveTo(54, document.y)
-      .lineTo(310, document.y)
-      .strokeColor("#667085")
-      .stroke();
-    document.moveDown(0.5);
-    document
-      .font("Helvetica-Oblique")
-      .fontSize(10)
-      .fillColor("#B42318")
-      .text("Not provided in this training sample");
+
+    if (signed) {
+      const signatureTop = document.y + 4;
+      document.image(createSignatureImage(), 54, signatureTop, { width: 210 });
+      document.y = signatureTop + 66;
+      document
+        .font("Helvetica-Oblique")
+        .fontSize(9)
+        .fillColor("#667085")
+        .text("Synthetic handwritten signature image for training only");
+    } else {
+      document.moveDown(1.8);
+      document
+        .moveTo(54, document.y)
+        .lineTo(310, document.y)
+        .strokeColor("#667085")
+        .stroke();
+    }
   });
 }
 
@@ -323,6 +424,7 @@ function updateArchive() {
       claimFormPath,
       receiptPath,
       certificatePath,
+      signedCertificatePath,
       claimSubmissionPath,
     ],
     { stdio: "inherit" },
@@ -330,7 +432,11 @@ function updateArchive() {
 }
 
 await createClaimForm();
-await Promise.all([createReceipt(), createMedicalCertificate()]);
+await Promise.all([
+  createReceipt(),
+  createMedicalCertificate(certificatePath),
+  createMedicalCertificate(signedCertificatePath, true),
+]);
 updateArchive();
 
 console.log("Generated fictional claims package in docs/public/downloads.");

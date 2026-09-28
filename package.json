@@ -11,6 +11,7 @@
   "devDependencies": {
     "docx": "^9.8.0",
     "pdfkit": "^0.20.2",
+    "pngjs": "^7.0.0",
     "vitepress": "1.6.4"
   },
   "overrides": {
