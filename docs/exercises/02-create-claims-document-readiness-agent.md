@@ -59,7 +59,12 @@
    ```
 
 6. เปิด `Test your agent`
-7. แนบไฟล์ `fictional-claim-form.docx`, `fictional-itemized-receipt.pdf` และ `fictional-medical-certificate.pdf`
+7. แนบไฟล์ต่อไปนี้
+
+   1. `fictional-claim-form.docx`
+   2. `fictional-itemized-receipt.pdf`
+   3. `fictional-medical-certificate.pdf`
+
 8. ส่งคำขอต่อไปนี้
 
    ```text
@@ -179,13 +184,13 @@ Knowledge ทำหน้าที่เป็น checklist สำหรับ�
    - **Prompt name**
 
      ```text
-   Create Claims Revision Email
+     Create Claims Revision Email
      ```
 
    - **คลิกในช่อง instruction แล้วเลือก Add content > Text จากด้านล่าง**
 
      ```text
-   ClaimPackageReview
+     ClaimPackageReview
      ```
 
 4. วาง Prompt ต่อไปนี้ และแทรก `ClaimPackageReview` input ในบรรทัดสุดท้าย
@@ -290,8 +295,8 @@ Knowledge ทำหน้าที่เป็น checklist สำหรับ�
 11. ถาม
 
     ```text
-   ตรวจ claim package นี้ตาม Knowledge แล้วแยกเอกสารที่ได้รับ เอกสารที่ยังขาด
-   และข้อมูลที่ขาดหรือไม่ชัดภายในเอกสารที่ได้รับ
+    ตรวจ claim package นี้ตาม Knowledge แล้วแยกเอกสารที่ได้รับ เอกสารที่ยังขาด
+    และข้อมูลที่ขาดหรือไม่ชัดภายในเอกสารที่ได้รับ
     ```
 
 12. ตรวจว่า Agent ระบุ `payment instruction confirmation` เป็นเอกสารที่ยังขาด และระบุ provider signature เป็นข้อมูลที่ขาดใน `fictional-medical-certificate.pdf` โดยไม่ตัดสิน coverage หรือ eligibility
@@ -299,8 +304,8 @@ Knowledge ทำหน้าที่เป็น checklist สำหรับ�
 14. ถามต่อในบทสนทนาเดิม
 
     ```text
-   ช่วยร่างอีเมลภาษาไทยถึงผู้ส่งคำขอ เพื่อแจ้งรายการที่ต้องแก้ไข
-   และขอให้ส่ง claim package กลับมาใหม่
+    ช่วยร่างอีเมลภาษาไทยถึงผู้ส่งคำขอ เพื่อแจ้งรายการที่ต้องแก้ไข
+    และขอให้ส่ง claim package กลับมาใหม่
     ```
 
 15. ตรวจใน activity map ว่า Agent เรียก `Create Claims Revision Email` โดยใช้ผลตรวจที่ทบทวนแล้วเป็น `ClaimPackageReview`
