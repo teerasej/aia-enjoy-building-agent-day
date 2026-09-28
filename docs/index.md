@@ -2,9 +2,9 @@
 layout: home
 
 hero:
-  name: Two-Agent Workshop
-  text: สร้าง Agent สองตัวด้วยรูปแบบเดียวกัน
-  tagline: ลองทำ หยุดคุย เปรียบเทียบ แล้วนำความเข้าใจไปใช้กับงานใหม่
+  name: AI Agent Workshop
+  text: สร้าง AI Agent มาเป็นลูกทีมของเรากันดีกว่า
+  tagline: ลองทำ เปรียบเทียบ แล้วนำความเข้าใจไปใช้กับงานของตัวเอง
   actions:
     - theme: brand
       text: เริ่ม Meeting Action Agent
@@ -18,22 +18,21 @@ features:
     details: จัดบันทึกประชุม เพิ่ม Project Knowledge และสร้าง follow-up brief ที่พร้อมให้คนตรวจ
     link: /exercises/01-create-meeting-action-agent
   - title: Claims Document Readiness Agent
-    details: ตรวจรายการเอกสารจาก fictional checklist โดยไม่ตัดสินผลของ claim
+    details: ตรวจรายการเอกสารจาก checklist โดยไม่ตัดสินผลการยื่นเคลม
     link: /exercises/02-create-claims-document-readiness-agent
-  - title: Pattern ที่ใช้ร่วมกัน
+  - title: Pattern พื้นฐานที่ใช้ร่วมกัน
     details: Instruction กำหนดงาน Knowledge ให้บริบท Prompt Tool จัดผลลัพธ์ และคนเป็นผู้ตัดสินใจ
     link: /resources/two-agent-test-cases
 ---
 
 ## ก่อนเริ่ม
 
-- เข้า Microsoft Copilot Studio และเลือก Environment ที่ผู้สอนกำหนด
-- สร้าง Agent ผ่าน `Agents` > `New agent` > `Create blank agent` แล้วรอ provisioning ก่อนใส่ `Instructions`
+- เข้า [Microsoft Copilot Studio](https://copilotstudio.microsoft.com/) และเลือก Environment ที่ผู้สอนกำหนด
 - ใช้บัญชีสำหรับการอบรมที่สร้าง Agent, เพิ่ม Knowledge และสร้าง Prompt Tool ได้
 - ดาวน์โหลด [ไฟล์ประกอบทั้งหมด](https://teerasej.github.io/aia-enjoy-building-agent-day/downloads/two-agent-workshop-sample-files.zip)
 - ใช้เฉพาะข้อมูลสมมติ ห้ามใช้ข้อมูลประชุม ข้อมูลลูกค้า ข้อมูลสุขภาพ หรือเอกสาร claim จริง
 
-> **Readiness:** Knowledge และ Prompt Tool ต้องผ่านการตรวจ learner account, Dataverse search, file upload, supported region, maker permission และ Copilot Credits หากยังไม่พร้อม ให้ติดตาม Instructor demonstration โดยไม่พยายามหลีกเลี่ยงนโยบาย Environment
+> **Readiness:** Knowledge และ Prompt Tool ต้องผ่านการตรวจ learner account, Dataverse search, file upload, และ Copilot Credits หากยังไม่พร้อม ให้ดูการเดโมของวิทยากรแทนได้ครับ
 
 ## Workshop Agenda
 

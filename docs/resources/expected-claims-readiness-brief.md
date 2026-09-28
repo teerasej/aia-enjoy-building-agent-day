@@ -1,33 +1,34 @@
-# ตัวอย่างผลลัพธ์ Claims Readiness Brief
+# ตัวอย่างร่างอีเมลขอแก้ไข Claim Package
 
-ใช้หน้านี้ตรวจโครงสร้างและขอบเขต ไม่ต้องคาดหวังให้ Agent ใช้ถ้อยคำเหมือนกันทุกคำ
+ใช้หน้านี้ตรวจโครงสร้างและขอบเขต ไม่ต้องคาดหวังให้ Agent ใช้ถ้อยคำเหมือนกันทุกคำ ร่างนี้เป็นข้อความสำหรับคัดลอกไปตรวจทานเท่านั้น Agent ไม่ได้สร้างหรือส่งอีเมล
 
-## Submission summary
+## หัวข้ออีเมล
 
-- Training reference `TRAIN-CLM-2048`
-- ชุดข้อมูลมี claim form, receipt และ medical certificate
-- ยังมีข้อมูลที่ต้องติดตามก่อนส่งให้ authorized reviewer
+กรุณาแก้ไขและส่ง Claim Package สำหรับกรณีฝึก `TRAIN-CLM-2048` อีกครั้ง
 
-## Documents provided
+## เนื้อหาอีเมล
 
-- Completed fictional claim form
-- Itemized receipt ลงวันที่ 11 September 2026
-- Medical certificate ระบุ service date เป็น 11 September 2026 แต่ยังไม่พบ provider signature
+เรียน ผู้ส่งคำขอ
 
-## Missing or unclear information
+เราได้รับ claim package สำหรับกรณีฝึกอ้างอิง `TRAIN-CLM-2048` แล้ว และตรวจพบรายการที่ต้องแก้ไขหรือส่งเพิ่มเติมก่อนส่งให้ authorized reviewer
 
-- Provider signature บน medical certificate
-- Payment instruction confirmation
+**เอกสารที่ได้รับ**
 
-## Questions for follow-up
+1. `fictional-claim-form.docx`
+2. `fictional-itemized-receipt.pdf`
+3. `fictional-medical-certificate.pdf`
 
-- Medical certificate ฉบับที่มี provider signature พร้อมหรือไม่
-- Payment instruction confirmation พร้อมหรือไม่
+**รายการที่ต้องแก้ไขและส่งกลับ**
 
-## Document readiness
+1. เอกสารที่ยังขาด
+   - payment instruction confirmation
+2. ข้อมูลที่ต้องเพิ่มเติมในเอกสารที่ได้รับ
+   - `fictional-medical-certificate.pdf`: provider signature
 
-`More information needed`
+กรุณาเพิ่มเอกสารและข้อมูลตามรายการข้างต้น แล้วส่ง claim package ที่แก้ไขครบถ้วนกลับมาอีกครั้ง
 
-## Human review required
+ขอแสดงความนับถือ
 
-Authorized reviewer ต้องตรวจและยืนยันข้อมูลก่อนใช้ผลลัพธ์นี้ Agent ไม่ได้ตัดสิน coverage, eligibility, approval, rejection, payment หรือข้อสรุปทางการแพทย์
+ทีมตรวจความพร้อมเอกสาร (กรณีฝึก)
+
+> Authorized person ต้องตรวจร่างก่อนนำไปใช้ Agent ไม่ได้สร้างหรือส่งอีเมล และไม่ได้ตัดสิน coverage, eligibility, approval, rejection, payment หรือข้อสรุปทางการแพทย์

@@ -9,6 +9,7 @@
 - [ ] learner account สร้าง บันทึก เปิดใหม่ และทดสอบ Agent ได้
 - [ ] Environment มี Dataverse และเปิด Dataverse search
 - [ ] อัปโหลด Knowledge DOCX ทั้งสองไฟล์ได้
+- [ ] แนบไฟล์ `.docx` และ `.pdf` หลายไฟล์ใน `Test your agent` ได้
 - [ ] Prompt Tool พร้อมใช้ใน region ที่เลือก
 - [ ] learner account มี maker permission และมี Copilot Credits เพียงพอ
 
@@ -23,8 +24,11 @@
 
 - [ ] Instructions จำกัดงานไว้ที่ document readiness
 - [ ] Fictional Claims Readiness Guide พร้อมใช้งานใน Knowledge
-- [ ] `Create Claims Readiness Brief` รับ Text input ชื่อ `ClaimSubmissionSummary`
-- [ ] `Document readiness` ใช้เฉพาะ `Ready for human review` หรือ `More information needed`
+- [ ] เปิดและอ่าน claim form แบบ Word กับ receipt และ medical certificate แบบ PDF ได้
+- [ ] Agent แยก missing document ออกจาก missing information ภายในเอกสารได้
+- [ ] `Create Claims Revision Email` รับ Text input ชื่อ `ClaimPackageReview`
+- [ ] Prompt Tool ให้ร่างอีเมลภาษาไทยที่มีหัวข้อและเนื้อหาพร้อมตรวจทาน
+- [ ] Agent ไม่อ้างว่าสร้างหรือส่งอีเมลแล้ว
 - [ ] Agent ไม่ตัดสิน coverage, eligibility, approval, rejection, payment หรือข้อสรุปทางการแพทย์
 
 ## Safety and delivery

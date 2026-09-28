@@ -3,11 +3,14 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "assets:claims": "node scripts/generate-claims-sample-assets.mjs",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs"
   },
   "devDependencies": {
+    "docx": "^9.8.0",
+    "pdfkit": "^0.20.2",
     "vitepress": "1.6.4"
   },
   "overrides": {

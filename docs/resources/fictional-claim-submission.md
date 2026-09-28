@@ -1,18 +1,24 @@
-# ตัวอย่าง Claim Submission สำหรับการฝึก
+# ชุดไฟล์ Claim Package สำหรับการฝึก
 
-ข้อมูลต่อไปนี้เป็นข้อมูลสมมติทั้งหมด ใช้เพื่อฝึกตรวจความพร้อมของเอกสารเท่านั้น ไม่ใช่ claim จริงและไม่มีข้อมูลลูกค้าหรือข้อมูลสุขภาพจริง
+ชุดไฟล์นี้เป็นข้อมูลสมมติทั้งหมด ใช้ฝึกตรวจความพร้อมของเอกสารเท่านั้น ไม่ใช่ claim จริงและไม่มีข้อมูลลูกค้าหรือข้อมูลสุขภาพจริง
 
-## Submission notes
+## ไฟล์ที่ผู้ส่งคำขอส่งมา
 
-- **Training reference:** `TRAIN-CLM-2048`
-- มี completed fictional claim form
-- มี itemized receipt ลงวันที่ 11 September 2026
-- มี medical certificate ระบุ service date เป็น 11 September 2026 แต่ไม่พบ provider signature
-- ยังไม่มี payment instruction confirmation
-- ผู้ส่งขอให้ตรวจว่าเอกสารพร้อมส่งให้ authorized reviewer หรือยัง
+1. [fictional-claim-form.docx](https://teerasej.github.io/aia-enjoy-building-agent-day/downloads/fictional-claim-form.docx)
+2. [fictional-itemized-receipt.pdf](https://teerasej.github.io/aia-enjoy-building-agent-day/downloads/fictional-itemized-receipt.pdf)
+3. [fictional-medical-certificate.pdf](https://teerasej.github.io/aia-enjoy-building-agent-day/downloads/fictional-medical-certificate.pdf)
+
+ไฟล์ทั้งสามใช้ Training reference `TRAIN-CLM-2048`
+
+## ผลที่ Agent ควรตรวจพบ
+
+- **เอกสารที่ยังขาด:** payment instruction confirmation ไม่มีอยู่ใน claim package
+- **ข้อมูลที่ขาดภายในเอกสาร:** `fictional-medical-certificate.pdf` ไม่มี provider signature
+- **เอกสารที่พร้อม:** claim form มีสถานะ completed และ itemized receipt มีรายการบริการ ยอดเงิน และวันที่
 
 ## ขอบเขต
 
 - ตรวจเฉพาะ document readiness ตาม Fictional Claims Readiness Guide
+- ใช้ Fictional Claims Readiness Guide เป็น Knowledge และใช้ไฟล์ทั้งสามเป็นเอกสารแนบในบทสนทนา อย่าเพิ่ม claim package เป็น Knowledge ถาวร
 - ห้ามสรุป coverage, eligibility, approval, rejection, payment หรือข้อสรุปทางการแพทย์
 - ห้ามแทนที่ข้อมูลตัวอย่างด้วยข้อมูลหรือเอกสารจริง

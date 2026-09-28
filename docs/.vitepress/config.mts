@@ -45,7 +45,7 @@ export default defineConfig({
         items: [
           { text: 'บันทึกประชุมตัวอย่าง', link: '/resources/fictional-meeting-notes' },
           { text: 'ตัวอย่างผลลัพธ์', link: '/resources/expected-meeting-summary' },
-          { text: 'ตัวอย่าง Claims Readiness Brief', link: '/resources/expected-claims-readiness-brief' },
+          { text: 'ตัวอย่างร่างอีเมล Claim Package', link: '/resources/expected-claims-readiness-brief' },
           { text: 'ชุดทดสอบ Agent ทั้งสองตัว', link: '/resources/two-agent-test-cases' },
           { text: 'Two-Agent Readiness Checklist', link: '/resources/two-agent-readiness-checklist' }
         ]
