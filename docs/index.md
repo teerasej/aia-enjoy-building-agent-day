@@ -30,6 +30,7 @@ features:
 - เข้า [Microsoft Copilot Studio](https://copilotstudio.microsoft.com/) และเลือก Environment ที่ผู้สอนกำหนด
 - ใช้บัญชีสำหรับการอบรมที่สร้าง Agent, เพิ่ม Knowledge และสร้าง Prompt Tool ได้
 - ดาวน์โหลด [ไฟล์ประกอบทั้งหมด](https://teerasej.github.io/aia-enjoy-building-agent-day/downloads/two-agent-workshop-sample-files.zip)
+- อ่าน [Workshop Slides v3 (PDF)](https://teerasej.github.io/aia-enjoy-building-agent-day/downloads/open-v3-export.pdf) ซึ่งรวมอยู่ใน ZIP แล้ว
 - ใช้เฉพาะข้อมูลสมมติ ห้ามใช้ข้อมูลประชุม ข้อมูลลูกค้า ข้อมูลสุขภาพ หรือเอกสาร claim จริง
 
 > **Readiness:** Knowledge และ Prompt Tool ต้องผ่านการตรวจ learner account, Dataverse search, file upload, และ Copilot Credits หากยังไม่พร้อม ให้ดูการเดโมของวิทยากรแทนได้ครับ

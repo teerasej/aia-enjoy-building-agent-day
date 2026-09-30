@@ -426,6 +426,7 @@ function updateArchive() {
       certificatePath,
       signedCertificatePath,
       claimSubmissionPath,
+      resolve(downloadsDirectory, "open-v3-export.pdf"),
     ],
     { stdio: "inherit" },
   );

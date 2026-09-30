@@ -5,8 +5,13 @@
 ## ดาวน์โหลด
 
 - [ไฟล์ประกอบทั้งหมด](https://teerasej.github.io/aia-enjoy-building-agent-day/downloads/two-agent-workshop-sample-files.zip)
+- [Workshop Slides v3 (PDF)](https://teerasej.github.io/aia-enjoy-building-agent-day/downloads/open-v3-export.pdf)
 
 ภายใน ZIP มีไฟล์สำหรับทำแบบฝึกหัดตามนี้
+
+### Workshop Slides
+
+- `open-v3-export.pdf` สไลด์ประกอบ Workshop เฉพาะสไลด์ที่แสดง ใช้อ่านประกอบ ไม่ต้องอัปโหลดเป็น `Knowledge`
 
 ### Meeting Action Follow-up Agent
 
