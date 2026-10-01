@@ -42,13 +42,5 @@ features:
 | 13:30–13:45 | Introduction | เห็นบทบาทของ `Instruction`, `Knowledge` และ Prompt Tool |
 | 13:45–14:45 | Meeting Action Follow-up Agent | สร้างและทดสอบ pattern แบบครบเส้นทาง |
 | 14:45–15:30 | Claims Document Readiness Agent | สร้าง pattern เดิมกับงานตรวจเอกสาร |
-| 15:30–15:45 | Final Wow Demo | เห็นจุดแข็งและขอบเขตของ Agent ทั้งสองตัว |
+| 15:30–15:45 | Final Wow Demo | สัมผัสความเป็นไปได้ใหม่ๆ สำหรับการสร้าง AI Agent มาช่วยงาน |
 | 15:45–16:00 | Conclusion | เลือกงานเล็กที่เหมาะและระบุจุดที่คนต้อง Review |
-
-<div class="workshop-artwork">
-
-![ทีมผู้เรียนตรวจผลลัพธ์ของ Agent ก่อนนำไปใช้](./assets/workshop/human-review-readiness.webp)
-
-</div>
-
-Workshop ใช้จังหวะ **Show → Try → Pause → Compare → Continue** ไม่มี Connector, external action หรือ production publishing
